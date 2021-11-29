@@ -23,6 +23,21 @@ public class CityList {
     }
 
     /**
+     * This delete a city from the list if the city list exists
+     * @param city
+     *      This is a candidate city to delete
+     */
+    public void delete(City city) {
+        if (cities.contains(city)) {
+            cities.remove(city);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
+    }
+
+
+    /**
      * This returns a sorted list of cities
      * @return
      *      Return the sorted list
@@ -31,6 +46,16 @@ public class CityList {
         List<City> list = cities;
         Collections.sort(list);
         return list;
+    }
+
+    /**
+     * This function returns the size of the list
+     * @return
+     *      Return the list.size
+     */
+    public int getSize(){
+        List<City> list = cities;
+        return list.size();
     }
 
 }
